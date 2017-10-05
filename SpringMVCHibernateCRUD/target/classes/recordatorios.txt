@@ -1,0 +1,76 @@
+
+https://www.mkyong.com/hibernate/maven-3-hibernate-3-6-oracle-11g-example-xml-mapping/
+
+<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:MKYONG</property>
+<property name="hibernate.connection.username">mkyong</property>
+<property name="hibernate.connection.password">password</property>
+<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+<property name="hibernate.default_schema">MKYONG</property>
+<property name="show_sql">true</property>
+
+----------------------------------------------------------
+Proyecto Login
+
+# DataSource 
+ds.database-driver=oracle.jdbc.driver.OracleDriver
+#ds.url=jdbc:oracle:thin:@localhost:1521:xe
+ds.url=jdbc:oracle:thin:@localhost:1521/xe
+ds.username=SYSTEM
+ds.password=1234
+
+------------------------------------
+Proyecto CRUD Predf.
+
+#Database related properties
+database.driver=com.mysql.jdbc.Driver
+database.url=jdbc:mysql://localhost:3306/spring
+database.user=root
+database.password=
+
+#Hibernate related properties
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.show_sql=true
+hibernate.format_sql=true
+hibernate.hbm2ddl.auto=update
+
+---------------------
+
+Try 1
+
+#Database related properties
+database.driver=oracle.jdbc.driver.OracleDriver
+database.url=jdbc:oracle:thin:@localhost:1521:xe
+database.user=SYSTEM
+database.password=12345
+
+#Hibernate related properties
+hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+hibernate.show_sql=true
+hibernate.format_sql=true
+hibernate.hbm2ddl.auto=update
+
+Try 2
+
+spring.main.banner-mode=off
+
+# create and drop tables and sequences, loads import.sql
+spring.jpa.hibernate.ddl-auto=create-drop
+
+# Oracle settings
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=system
+spring.datasource.password=password
+spring.datasource.driver-class-oracle.jdbc.driver.OracleDriver
+
+# HikariCP settings
+# spring.datasource.hikari.*
+
+spring.datasource.hikari.connection-timeout=60000
+spring.datasource.hikari.maximum-pool-size=5
+
+# logging
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+logging.level.org.hibernate.SQL=debug
+#logging.level.org.hibernate.type.descriptor.sql=trace
+logging.level.=error
