@@ -9,7 +9,5 @@ import com.SpringBoot.models.Alumno;
 
 @Repository
 public interface SpringBootRepository extends CrudRepository<Alumno, Long>{
-	
-	
 
 }
