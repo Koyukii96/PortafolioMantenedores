@@ -5,13 +5,13 @@ import com.jwt.model.TipoActividad;
 
 public interface TipoActividadDAO {
 
-	public void addTipoActividad(TipoActividad tipo);
+	public void addTipoActividad(TipoActividad tipoActividad);
 
 	public List<TipoActividad> getAllTipoActividad();
 
-	public void deleteTipoActividad(Integer tipoId);
+	public void deleteTipoActividad(Integer tipoActividadId);
 
-	public TipoActividad updateTipoActividad(TipoActividad tipo);
+	public TipoActividad updateTipoActividad(TipoActividad tipoActividad);
 
-	public TipoActividad getTipoActividad(int tipoId);
+	public TipoActividad getTipoActividad(int tipoActividadId);
 }

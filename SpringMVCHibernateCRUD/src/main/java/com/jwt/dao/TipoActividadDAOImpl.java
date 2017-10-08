@@ -13,36 +13,36 @@ public class TipoActividadDAOImpl implements TipoActividadDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	public void addTipoActividad(TipoActividad tipo) {
-		sessionFactory.getCurrentSession().saveOrUpdate(tipo);
+	public void addTipoActividad(TipoActividad tipoActividad) {
+		sessionFactory.getCurrentSession().saveOrUpdate(tipoActividad);
 
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<TipoActividad> getAllTipoActividad() {
 
-		return sessionFactory.getCurrentSession().createQuery("from tipo_actividad")
+		return sessionFactory.getCurrentSession().createQuery("from TipoActividad")
 				.list();
 	}
 
 	@Override
-	public void deleteTipoActividad(Integer tipoId) {
-		TipoActividad tipo = (TipoActividad) sessionFactory.getCurrentSession().load(
-				TipoActividad.class, tipoId);
-		if (null != tipo) {
-			this.sessionFactory.getCurrentSession().delete(tipo);
+	public void deleteTipoActividad(Integer tipoActividadId) {
+		TipoActividad tipoActividad = (TipoActividad) sessionFactory.getCurrentSession().load(
+				TipoActividad.class, tipoActividadId);
+		if (null != tipoActividad) {
+			this.sessionFactory.getCurrentSession().delete(tipoActividad);
 		}
 
 	}
 
-	public TipoActividad getTipoActividad(int tipoId) {
+	public TipoActividad getTipoActividad(int tipoActividadId) {
 		return (TipoActividad) sessionFactory.getCurrentSession().get(
-				TipoActividad.class, tipoId);
+				TipoActividad.class, tipoActividadId);
 	}
 
 	@Override
-	public TipoActividad updateTipoActividad(TipoActividad tipo) {
-		sessionFactory.getCurrentSession().update(tipo);
-		return tipo;
+	public TipoActividad updateTipoActividad(TipoActividad tipoActividad) {
+		sessionFactory.getCurrentSession().update(tipoActividad);
+		return tipoActividad;
 	}
 }
